@@ -139,10 +139,12 @@ func (w *workerDelegate) generateMachineConfig() error {
 			}
 
 			machineClassSpec := map[string]interface{}{
-				"ami":                ami,
-				"region":             w.worker.Spec.Region,
-				"machineType":        pool.MachineType,
-				"iamInstanceProfile": iamInstanceProfile,
+				"ami":                    ami,
+				"region":                 w.worker.Spec.Region,
+				"machineType":            pool.MachineType,
+				"operatingSystem":        pool.MachineImage.Name,
+				"operatingSystemVersion": pool.MachineImage.Version,
+				"iamInstanceProfile":     iamInstanceProfile,
 				"networkInterfaces": []map[string]interface{}{
 					{
 						"subnetID":         nodesSubnet.ID,

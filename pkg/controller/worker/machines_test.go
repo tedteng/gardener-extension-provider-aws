@@ -452,9 +452,11 @@ var _ = Describe("Machines", func() {
 						"secret": map[string]interface{}{
 							"cloudConfig": string(userData),
 						},
-						"ami":         machineImageAMI,
-						"region":      region,
-						"machineType": machineType,
+						"ami":                    machineImageAMI,
+						"region":                 region,
+						"machineType":            machineType,
+						"operatingSystem":        machineImageName,
+						"operatingSystemVersion": machineImageVersion,
 						"iamInstanceProfile": map[string]interface{}{
 							"name": instanceProfileName,
 						},

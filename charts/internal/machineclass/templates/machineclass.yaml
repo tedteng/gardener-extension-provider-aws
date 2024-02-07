@@ -34,6 +34,8 @@ providerSpec:
   ami: {{ $machineClass.ami }}
   region: {{ $machineClass.region }}
   machineType: {{ $machineClass.machineType }}
+  operatingSystem:  {{ $machineClass.operatingSystem }}
+  operatingSystemVersion:  {{ $machineClass.operatingSystemVersion }}
   srcAndDstChecksEnabled: false
   iam:
 {{- if $machineClass.iamInstanceProfile.name }}
